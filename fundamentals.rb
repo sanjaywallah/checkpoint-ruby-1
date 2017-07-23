@@ -1,11 +1,8 @@
 # Question 1
 # Define a method called `offer_rose`, which should take one argument named `person` (String).
-# When called the method should return:
+# When called the method should print to the terminal:
 # "Would you take this rose, `person`, in exchange for giving an old beggar woman shelter from the bitter cold?"
 # Type your solution directly below this line:
-
-
-
 
 
 
@@ -19,7 +16,7 @@ town = {
   residents: ["Maurice", "Belle", "Gaston"],
   castle: {
     num_rooms: 47,
-    residents: "Robby Benson",
+    residents: ["Robby Benson"],
     guests: []
   }
 }
@@ -28,8 +25,6 @@ town = {
 # - Remove "Belle" from `residents`
 # - Add "Belle" to the `guests` array
 # Type your solution directly below this line:
-
-
 
 
 
