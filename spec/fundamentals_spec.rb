@@ -6,7 +6,10 @@ b = binding
 b.eval(fundamentals)
 
 describe "Fundamentals #1" do
-  offer_rose = b.method(:offer_rose)
+  begin
+    offer_rose = b.method(:offer_rose)
+  rescue
+  end
 
   it "offer_rose is a method" do
     expect(offer_rose).to be_a(Method)
