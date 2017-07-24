@@ -1,5 +1,3 @@
-
-
 fundamentals = File.open('fundamentals.rb').read
 
 b = binding
