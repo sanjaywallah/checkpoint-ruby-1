@@ -15,12 +15,12 @@
 
 
 
-
 # Question 8
 # Define a Ruby class called `Lion` that inherits from the `Animal` class.
-# Each lion should have...
+# Each lion should have the same attributes and methods as `Animal`. Each lion
+# should also have...
 # - A `king` (Boolean) attribute
-# - If the instance's `name` is "Simba", set the `king` attribute to `true`
+# - Only set the `king` attribute to `true` if the instance's `name` is "Simba"
 # Type your solution directly below this line:
 
 
