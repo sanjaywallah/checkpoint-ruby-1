@@ -32,7 +32,7 @@ end
 
 describe "Fundamentals #3" do
   it "A loop is used" do
-    expect(fundamentals.scan(/for|while|until|loop do|.times/).length).to be > 1
+    expect(fundamentals.scan(/for|while|until|loop do|.times/).length).to be > 0
   end
 
   it "The loop prints each friend to the terminal" do
