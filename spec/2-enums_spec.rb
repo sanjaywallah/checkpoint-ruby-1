@@ -1,12 +1,17 @@
 enums = File.open('enums.rb').read
 
 b = binding
-b.eval(enums)
+
+begin
+  b.eval(enums)
+rescue Exception => exc
+  puts exc
+end
 
 describe "Enums #4" do
   begin
     lost_boys = b.eval('lost_boys')
-  rescue
+  rescue Exception
   end
 
   it "The .each enumerator is used" do
@@ -21,7 +26,7 @@ end
 describe "Enums #5" do
   begin
     darling_children = b.eval('darling_children')
-  rescue
+  rescue Exception
   end
 
   it "The .map enumerator is used" do

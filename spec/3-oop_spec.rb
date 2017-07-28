@@ -1,21 +1,26 @@
 oop = File.open('oop.rb').read
 
 b = binding
-b.eval(oop)
+
+begin
+  b.eval(oop)
+rescue Exception => exc
+  puts exc
+end
 
 describe "OOP #6" do
   begin
-    Animal = b.eval('Animal')
-  rescue
+    A = b.eval('Animal')
+  rescue Exception
   end
 
   begin
-    simon = Animal.new('Simon')
-  rescue
+    simon = A.new('Simon')
+  rescue Exception
   end
 
   it "Animal is a class" do
-    expect(Animal).to be_a(Class)
+    expect(A).to be_a(Class)
   end
 
   it "Animal sets attributes and methods" do
@@ -36,21 +41,21 @@ end
 
 describe "OOP #8" do
   begin
-    Lion = b.eval('Lion')
+    L = b.eval('Lion')
   rescue
   end
 
   begin
-    simba = Lion.new('Simba')
+    simba = L.new('Simba')
   rescue
   end
 
   it "Lion is a class" do
-    expect(Lion).to be_a(Class)
+    expect(L).to be_a(Class)
   end
 
   it "Lion inherits from Animal" do
-    expect(Lion.superclass).to eq(Animal)
+    expect(L.superclass).to eq(Animal)
   end
 
   it "Lion adds a king attribute to existing Animal attributes" do

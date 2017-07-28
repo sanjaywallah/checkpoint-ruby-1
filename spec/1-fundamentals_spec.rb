@@ -1,12 +1,17 @@
 fundamentals = File.open('fundamentals.rb').read
 
 b = binding
-b.eval(fundamentals)
+
+begin
+  b.eval(fundamentals)
+rescue Exception => exc
+  puts exc
+end
 
 describe "Fundamentals #1" do
   begin
     offer_rose = b.method(:offer_rose)
-  rescue
+  rescue Exception
   end
 
   it "offer_rose is a method" do
@@ -19,7 +24,10 @@ describe "Fundamentals #1" do
 end
 
 describe "Fundamentals #2" do
-  town = b.eval('town')
+  begin
+    town = b.eval('town')
+  rescue Exception
+  end
 
   it "Belle has been removed from the town residents" do
     expect(town[:residents]).to_not include('Belle')
@@ -36,6 +44,11 @@ describe "Fundamentals #3" do
   end
 
   it "The loop prints each friend to the terminal" do
-    expect {eval(fundamentals)}.to output(/Mrs. Potts/).to_stdout
+    expect {
+      begin
+        eval(fundamentals)
+      rescue Exception
+      end
+    }.to output(/Mrs. Potts/).to_stdout
   end
 end
